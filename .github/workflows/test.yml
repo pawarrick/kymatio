@@ -34,5 +34,9 @@ jobs:
                   python3 -m pip install -r requirements_optional.txt
             - name: Set up Kymatio
               run: python3 setup.py develop
-            - name: Test
-              run: pytest --cov=kymatio -k "not tensorflow"
+            - name: Test Torch
+              run: pytest tests/scattering*d/*torch*.py
+            - name: Test Numpy
+              run: pytest tests/scattering*d/*torch*.py
+            - name: Test scikit-learn
+              run: pytest tests/scattering*d/*sklearn*.py
