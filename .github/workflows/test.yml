@@ -35,4 +35,4 @@ jobs:
             - name: Set up Kymatio
               run: python3 setup.py develop
             - name: Test
-              run: pytest --cov=kymatio
+              run: pytest --cov=kymatio -k "not tensorflow"
